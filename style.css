@@ -1,0 +1,27 @@
+h1{
+font-size: 18px;
+}
+
+
+p{
+font-size: 13px;
+}
+
+.hidden{
+display: none;
+}
+
+#user{
+    background-color: lightcyan;
+    border-color: whitesmoke;
+    color: darkorchid;
+    font-weight: bold;
+}
+
+#submit{
+background-color: lightcyan;
+}
+
+section.results{
+background-color: cornflowerblue;
+}
