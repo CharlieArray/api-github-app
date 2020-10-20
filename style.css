@@ -1,14 +1,17 @@
 h1{
-font-size: 18px;
+    font-size: 18px;
 }
 
+h3{
+    font-size: 14px;
+}
 
 p{
-font-size: 13px;
+    font-size: 13px;
 }
 
 .hidden{
-display: none;
+    display: none;
 }
 
 #user{
@@ -19,9 +22,9 @@ display: none;
 }
 
 #submit{
-background-color: lightcyan;
+    background-color: lightcyan;
 }
 
 section.results{
-background-color: cornflowerblue;
+    background-color: lightcyan;
 }

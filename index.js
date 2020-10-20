@@ -8,17 +8,25 @@
 //https://docs.github.com/en/free-pro-team@latest/rest/reference/repos#list-repositories-for-a-user
 
 
-
 //function to displayuserData
-function displayuserData(){
-//probably convert json string to object (do that in getUser function)
-//pass in json responseJson as parameter?
-//Need to push name of Repo
-//Need to push hyperlink to Repo
+function displayuserData(responseJson){
+
+console.log(responseJson)
+
+//empty contents of results in html to clear space for new query search
+$('.results-div').empty();
+
+for (let i = 0; i < responseJson.length; i++){
+ 
+    $('.results-div').append(
+      `<li><h3>repository name: <a href="${responseJson[i].html_url}">${responseJson[i].name}</a></h3>
+      <p>${responseJson[i].description}</p>
+      </li>`
+    )};
 }
 
 
-//function to get userData 
+//function to Get Repos from searched username  
 function getUserData(){
     //define variables to string concatenate GET URL request for 
     let url = 'https://api.github.com/users/';
@@ -28,12 +36,13 @@ function getUserData(){
 
     fetch(urlRequest)
     .then(response=>response.json())
-    .then(responseJson => console.log(responseJson))
-    .catch(console.error('error occured'))
+    //.then(responseJson => console.log(responseJson.length))
+    .then(responseJson => displayuserData(responseJson))
+    //.catch(error => console.log(error))
 }
 
 
-//event listener function watchForm for form submit
+//Event listener function to listen for submit button click
 function watchForm(){
     $('#submit').click(event=>{
         event.preventDefault();
