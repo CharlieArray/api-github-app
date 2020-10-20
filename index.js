@@ -19,7 +19,7 @@ $('.results-div').empty();
 for (let i = 0; i < responseJson.length; i++){
  
     $('.results-div').append(
-      `<li><h3>repository name: <a href="${responseJson[i].html_url}">${responseJson[i].name}</a></h3>
+      `<li><h3>repository name: <a href="${responseJson[i].html_url}" target="_blank">${responseJson[i].name}</a></h3>
       <p>${responseJson[i].description}</p>
       </li>`
     )};
